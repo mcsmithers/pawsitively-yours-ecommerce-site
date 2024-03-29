@@ -1,56 +1,90 @@
 /* App.css */
-body {
-  background-color: #f3f4f6; /* Set body background color to grey */
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .background-container {
-  /* Add styles for background-container */
-  background-image: url('./assets/space-background.jpg');
-  background-size: cover; /* Ensure the image covers the entire container */
-  background-position: center; /* Center the image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  /* Ensure full viewport height */
+}
+
+.background-container .centered-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  /* Take up full height of parent (.background-container) */
+}
+
+.background-container .centered-content .hero-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('./assets/space-background.jpg');
+  background-size: cover;
+  height: 400px;
+  justify-content: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
 }
 
 /* Additional styles */
 
-.centered-content {
-  /* Add styles for centered-content */
-}
-
 .title {
-  font-size: 1.875rem; 
-  font-weight: 600;   
+  font-size: 1.875rem;
+  font-weight: 600;
   margin-bottom: 1rem;
+  color: white;
 }
 
 .description {
-  color: #4B5563; 
-  margin-bottom: 1rem; 
+  color: white;
+  margin-bottom: 1rem;
 }
 
 .button-container {
-  /* Add styles for button-container */
 }
 
 .btn {
   background-color: #3B82F6;
-  color: #fff;             
-  font-weight: 600;    
-  padding: 0.5rem 1rem;   
-  border-radius: 9999px;     
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.1); 
-  outline: none; 
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.01), 0 2px 4px 0 rgba(0, 0, 0, .7);
+  outline: none;
 }
 
 .btn:hover {
   background-color: #2563EB;
+  cursor: pointer;
 }
 
 .arrow-icon {
-  width: 1.5rem;  
-  height: 1.5rem; 
-  margin-left: 0.5rem; 
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 0.5rem;
 }
