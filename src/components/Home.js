@@ -20,7 +20,7 @@ function Home() {
                         <Product
                             id="456457"
                             title="Dog Adventure - Premium"
-                            price={18.99}
+                            price={28.99}
                             rating={5}
                             image="https://placedog.net/400/200?id=1"
                         />
