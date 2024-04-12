@@ -12,8 +12,8 @@ function Product({ id, title, image, price, rating }) {
                     <strong>{price}</strong>
                 </p>
                 <div className="product-rating">
-                    {Array(rating).fill().map((_, item) => (
-                        <p>⭐</p>
+                    {Array(rating).fill().map((_, index) => (
+                        <p key={index}>⭐</p>
                     ))}
                 </div>
             </div>
@@ -25,4 +25,4 @@ function Product({ id, title, image, price, rating }) {
     )
 }
 
-export default Product
+export default Product;
