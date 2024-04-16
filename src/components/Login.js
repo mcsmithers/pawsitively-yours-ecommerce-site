@@ -1,22 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from 'react';
 import StoreIcon from "@mui/icons-material/Store";
 import { Link, useNavigate } from "react-router-dom";
 import '../styles/Login.css';
-import { auth } from "../firebase"
+import { auth } from "../firebase";
 
 function Login() {
     const history = useNavigate();
-    const [email, setEmail] = useState(' ');
-    const [password, setPassword] = useState(' ');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const signIn = e => {
         e.preventDefault();
+
         auth
             .signInWithEmailAndPassword(email, password)
             .then(auth => {
                 history.push('/');
             })
-            .catch(err => console.error(err))
+            .catch(error => alert(error.message))
+
     }
 
     const register = e => {
@@ -29,7 +31,8 @@ function Login() {
                     history.push('/');
                 }
             })
-            .catch(err => console.error(err))
+            .catch(error => alert(error.message))
+
     }
 
     return (
@@ -37,7 +40,7 @@ function Login() {
             <Link to='/login' style={{ textDecoration: "none" }}>
                 <div className="login-logo">
                     <StoreIcon classname="login-logo-image" fontSize="large" />
-                    <h2 className="login-logo-title">Pawsitively Your eShop</h2>
+                    <h2 className="login-logo-title">Pawsitively Yours eShop</h2>
                 </div>
             </Link>
 
@@ -56,7 +59,7 @@ function Login() {
 
                 <p>By signing in, you agree to the Pawsitively Yours eShop website conditions of use and sale. Please see our Privacy Notice and our Cookies Notice.</p>
 
-                <button className='login-register-button' onClick={register}>Create Your PAwsitively Yours eShop Account</button>
+                <button className='login-register-button' onClick={register}>Create Your Pawsitively Yours eShop Account</button>
             </div>
         </div>
     )
