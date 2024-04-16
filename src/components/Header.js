@@ -23,10 +23,12 @@ function Header() {
                 <SearchIcon className="header-search-icon" />
             </div>
             <div className="header-nav">
-                <div className="nav-item">
-                    <span className="nav-item-greeting">Hello, Pawesome Friend!</span>
-                    <span className="nav-item-signin"><LoginIcon className="login" /></span>
-                </div>
+                <Link to="/login" style={{textDecoration:"none"}}>
+                    <div className="nav-item">
+                        <span className="nav-item-greeting">Hello, Pawesome Friend!</span>
+                        <span className="nav-item-signin"><LoginIcon className="login" /></span>
+                    </div>
+                </Link>
                 <div className="nav-item">
                     <span className="nav-item-name-shop">Your</span>
                     <span className="nav-item-shop">Shop</span>
